@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Study Buddy — Login</title>
+  <link rel="stylesheet" href="auth-style.css">
+</head>
+<body>
+
+  <div class="auth-page">
+    <div class="auth-card">
+      <div class="auth-logo">📚</div>
+      <h1>AI Study Buddy</h1>
+      <p class="auth-sub">Summarize notes. Generate quizzes. Study smarter.</p>
+
+      <div class="tab-row">
+        <button class="tab active" id="login-tab" onclick="showTab('login')">Log In</button>
+        <button class="tab" id="register-tab" onclick="showTab('register')">Sign Up</button>
+      </div>
+
+      <div id="login-form" class="auth-form">
+        <input type="text" id="login-username" placeholder="Username">
+        <input type="password" id="login-password" placeholder="Password">
+        <button class="auth-btn" onclick="handleLogin()">Log In</button>
+        <div id="login-error" class="auth-error"></div>
+      </div>
+
+      <div id="register-form" class="auth-form" style="display:none;">
+        <input type="text" id="register-username" placeholder="Choose a username">
+        <input type="password" id="register-password" placeholder="Choose a password">
+        <button class="auth-btn" onclick="handleRegister()">Sign Up</button>
+        <div id="register-error" class="auth-error"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

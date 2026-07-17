@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Study Buddy</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <aside class="sidebar">
+  <button class="new-chat-btn" onclick="startNewChat()">+ New Chat</button>
+  <div id="chat-list" class="chat-list"></div>
+  <button class="clear-all-btn" onclick="clearAllChats()">🗑️ Clear All Chats</button>
+  <div class="sidebar-footer">
+    <span id="username-display"></span>
+    <button class="logout-btn" onclick="handleLogout()">Log Out</button>
+  </div>
+</aside>
+
+    <main class="main-panel">
+      <header class="header">
+        <div class="header-icon">📚</div>
+        <div>
+          <h1>AI Study Buddy</h1>
+          <p>Paste your notes. Get instant summaries and quiz questions.</p>
+        </div>
+      </header>
+
+      <div class="input-section">
+        <textarea id="notes-input" placeholder="Paste your study notes here..."></textarea>
+        <div class="button-row">
+  <button class="action-btn summarize-btn" onclick="handleAction('summarize')">📝 Summarize</button>
+  <button class="action-btn quiz-btn" onclick="handleAction('quiz')">❓ Generate Quiz</button>
+  <button class="action-btn visualize-btn" onclick="handleVisualize()">📊 Visualize</button>
+</div>
+      </div>
+
+      <div id="loading" class="loading" style="display:none;">
+        <div class="spinner"></div>
+        <span>Thinking...</span>
+      </div>
+
+      <div id="messages-panel" class="messages-panel"></div>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
